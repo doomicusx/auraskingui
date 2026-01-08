@@ -3,6 +3,7 @@ export async function onRequest(context) {
   const client_id = env.GITHUB_CLIENT_ID;
   try {
     const url = new URL(request.url);
+     console.log("alterando essa merda")
     const redirectUrl = new URL("https://github.com/login/oauth/authorize");
     redirectUrl.searchParams.set("client_id", client_id);
     redirectUrl.searchParams.set("redirect_uri", url.origin + "/api/callback");
