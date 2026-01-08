@@ -34,6 +34,7 @@ export async function onRequest(context) {
         body: JSON.stringify({ client_id, client_secret, code }),
       }
     );
+    console.log("oi")
     const result = await response.json();
     if (result.error) {
       return new Response(renderBody("error", result), {
